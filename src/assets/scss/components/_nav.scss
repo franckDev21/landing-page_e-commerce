@@ -1,0 +1,32 @@
+.nav{
+  margin-left: 2rem;
+  a{
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    color: $dark-grayish-blue;
+    transition: color .3s ease-in-out;
+    &:not(:last-child){
+      margin-right: 30px;
+    }
+    &:hover,&.active{
+      color: $very-dark-blue;
+      &::after{
+        opacity: 1;
+      }
+    }
+    &::after{
+      content: "";
+      display: block;
+      height: 4px;
+      background-color: $orange;
+      border-radius: 2.5px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -46px;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+    }
+  }
+}

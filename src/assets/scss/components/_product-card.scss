@@ -1,0 +1,211 @@
+.product-card{
+  display: flex;
+  align-items: flex-start;
+  padding: 7rem 4rem 7rem 4rem;
+  justify-content: space-between;
+  @media (max-width: 901px){
+    flex-direction: column;
+  }
+
+  @include breakpoint-down(small){
+    padding: 0;
+  }
+  .carousel{
+    padding-left: 1rem;
+    width: 400px;
+    overflow: hidden;
+    flex: none;
+    &__screen{
+      height: 400px;
+      position: relative;
+      cursor: pointer;
+      img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      margin-bottom: 2rem;
+
+      @include breakpoint-down(small){
+        width: 100%;
+        height: 300px;
+        margin-bottom: 0;
+        img{
+          border-radius: 0;
+        }
+      }
+
+    }
+    @include breakpoint-down(small){
+      padding: 0;
+      width: 100%;
+    }
+    &__small-img{
+      display: flex;
+      justify-content: space-between;
+      .img{
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        &.active{
+          border: 3px solid $orange;
+          img{
+            opacity: .4;
+          }
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: cover;
+          box-sizing: border-box;
+        }
+      }
+      @include breakpoint-down(small){
+        display: none;
+      }
+    }
+  }
+  .right{
+    margin-left: 6rem;
+    padding-top: 3rem;
+
+    @media (max-width: 901px){
+      margin-left: 0;
+    }
+
+    @include breakpoint-down(small){
+      padding: 2rem;
+    }
+
+    .subtitle{
+      color: $orange;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: .5px;
+      margin-bottom: 2rem;
+    }
+    .title{
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: capitalize;
+      word-spacing: 3px;
+      margin-bottom: 2rem;
+      @include breakpoint-down(small){
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+    }
+    p{
+      line-height: 1.6;
+      color: $dark-grayish-blue;
+    }
+    .prices{
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      .price{
+        display: flex;
+        align-items: center;
+        .total{
+          font-size: 1.4rem;
+          font-weight: bold;
+          @include breakpoint-down(small){
+            font-size: 1.8rem;
+          }
+        }
+        .pourcent{
+          margin-left: 1rem;
+          background-color: $pale-orange;
+          color: $orange;
+          font-weight: bold;
+          padding: .2rem .5rem;
+          border-radius: 2px;
+        }
+      }
+      .prev-price{
+        font-size: 13px;
+        color: $grayish-blue;
+        text-decoration: line-through;
+        font-weight: bold;
+        margin-top: 4px;
+      }
+      @include breakpoint-down(small){
+        flex-direction: row;
+        justify-content: space-between;
+        .prev-price{
+          font-size: 18px;
+        }
+      }
+    }
+    .btns{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2rem;
+      .qte{
+        border-radius: 10px;
+        background-color: lighten($pale-orange,4);
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 12px #eee;
+        &__prev{
+          cursor: pointer;
+          height: 50px;
+          width: 60px;
+          @include flex($j-c:center);
+        }
+        .value{
+          margin: 0 10px;
+          font-weight: bold;
+        }
+        &__next{
+          cursor: pointer;
+          height: 50px;
+          width: 60px;
+          @include flex($j-c:center);
+        }
+      }
+      .btn{
+        border: none;
+        outline: none;
+        color: $white;
+        background-color: $orange;
+        height: 50px;
+        @include flex($j-c:center);
+        width: 60%;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        &:active{
+          transform: scale(.95);
+        }
+        img{
+          width: 15px;
+          height: 15px;
+          margin-right: 1rem;
+        }
+      }
+      @include breakpoint-down(small){
+        flex-direction: column;
+        .qte{
+          width: 100%;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          .value{
+            font-size: 18px;
+          }
+        }
+        .btn{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

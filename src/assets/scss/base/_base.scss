@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button[disabled],.disabled{
+    cursor: none;
+    opacity: .6;
+    pointer-events: none;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: $font-size;
+    background-color: $light-grayish-blue;
+}
+
+a,
+a:hover,
+a:active{
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul,li{
+    list-style: none;
+}
+
+// visibility
+.hide-for-mobile{
+    // hide for tablet and mobile
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{
+    // hide for desktop viewport widths
+    @include breakpoint-up(large){
+        display: none;
+    };
+}
