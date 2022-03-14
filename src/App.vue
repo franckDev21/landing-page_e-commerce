@@ -33,13 +33,22 @@ const decrement = () => {
   if (qte.value === 0) return
   qte.value--
 }
+const deleteProduct = (product) => {
+  store.dispatch('deleteToCart',product)
+  qteCart.value = 0
+}
 
 
 </script>
 
 <template>
 
-  <Header :showCart="showCart" :productsCart="productsCart" @show-cart="showCart = !showCart" :qte="qteCart" />
+  <Header
+      :showCart="showCart"
+      :productsCart="productsCart"
+      @show-cart="showCart = !showCart"
+      @delete-to-cart="deleteProduct"
+      :qte="qteCart" />
 
   <div class="product-card container">
     <div class="carousel">

@@ -1,4 +1,16 @@
-# vue3-vuex
+#  Landing-page E-commerce 
+
+![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
+
+## Welcome! 👋
+Welcome to my project, it's a landing page made with the composition API of Vue 3. it's a challenge of the frontendmentor.io website that I decided to reproduce in Vue JS 3 😁
+
+## Techno
+
+- VueJS 3
+- SCSS
+- JavaScript
+
 
 ## Project setup
 ```
@@ -15,10 +27,5 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**Thank** 🚀

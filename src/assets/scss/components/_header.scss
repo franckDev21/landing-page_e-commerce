@@ -26,7 +26,6 @@
     align-items: center;
     justify-content: space-between;
     display: flex;
-    position: relative;
   }
   &__logo{
     font-weight: 800;
@@ -55,15 +54,25 @@
   &__cart-product{
     position: absolute;
     background-color: #fff;
-    min-width: 305px;
+    max-width: 305px;
     min-height: 205px;
     width: 100%;
-    top: 50px;
-    right: 20px;
+    top: 6rem;
+    right: 4rem;
     z-index: 1;
     box-shadow: 0 0 7px #eee;
     border-radius: 8px;
     overflow: hidden;
+
+    @media (max-width: 460px) {
+      width: 94% !important;
+      max-width: initial;
+      margin: 0 auto;
+      top: 4.4rem;
+      left: 0;
+      right: 0;
+    }
+
     .title{
       padding: 1rem 1rem 0 1rem;
       font-weight: bold;
@@ -83,13 +92,14 @@
       justify-content: flex-start;
       align-items: flex-start;
       flex-direction: row;
+      position: relative;
       & > span{
         font-weight: bold;
         color: #aaaaaa;
         position: absolute;
         transform: translate(-50%,-50%);
         left: 50%;
-        top: 50%;
+        top: 200%;
       }
       .img{
         width: 50px;
@@ -106,12 +116,12 @@
         }
       }
       & > div:last-of-type{
-        position: relative;
         color: $dark-grayish-blue;
         svg{
           position: absolute;
-          right: -14px;
-          top: 1.5rem;
+          right: 1.2rem;
+          top: 2.4rem;
+          cursor: pointer;
         }
         h3{
           margin-left: 8px;

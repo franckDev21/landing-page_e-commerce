@@ -1,32 +1,83 @@
 .nav{
   margin-left: 2rem;
-  a{
-    font-size: 14px;
-    display: inline-block;
-    position: relative;
-    color: $dark-grayish-blue;
-    transition: color .3s ease-in-out;
-    &:not(:last-child){
-      margin-right: 30px;
-    }
-    &:hover,&.active{
-      color: $very-dark-blue;
+  &--desktop{
+    a{
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      color: $dark-grayish-blue;
+      transition: color .3s ease-in-out;
+      &:not(:last-child){
+        margin-right: 30px;
+      }
+      &:hover,&.active{
+        color: $very-dark-blue;
+        &::after{
+          opacity: 1;
+        }
+      }
       &::after{
-        opacity: 1;
+        content: "";
+        display: block;
+        height: 4px;
+        background-color: $orange;
+        border-radius: 2.5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -46px;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
       }
     }
-    &::after{
+  }
+  &--mobile{
+    &::before{
       content: "";
       display: block;
-      height: 4px;
-      background-color: $orange;
-      border-radius: 2.5px;
-      position: absolute;
+      position: fixed;
+      background-color: rgba(0,0,0,.46);
+      width: 100vw;
+      height: 100vh;
       left: 0;
       right: 0;
-      bottom: -46px;
-      opacity: 0;
-      transition: opacity .3s ease-in-out;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+    .close{
+      position: fixed;
+      z-index: 4;
+      cursor: pointer;
+      left: 2rem;
+      top: 2rem;
+    }
+    .links{
+      padding-left: 2rem;
+      padding-top: 4rem;
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      align-items: flex-start;
+      text-align: left;
+      width: 67%;
+      max-width: 375px;
+      box-shadow: 0 0 8px #aaa;
+      a{
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 1.2rem 0 0 0;
+        transition: color .3s ease-in-out;
+        &.active,&:hover{
+          color: $orange;
+        }
+      }
     }
   }
 }

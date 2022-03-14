@@ -23,10 +23,17 @@ export default createStore({
     productsCart : state => state.productsCart,
   },
   mutations: {
-    ADD_TO_CART : (state,product) => state.productsCart.push(product)
+    ADD_TO_CART : (state,product) => state.productsCart.push(product),
+    DELETE_TO_CART : (state,product) => {
+      let index = state.productsCart.indexOf(product)
+      if (index !== -1){
+        state.productsCart.splice(index,1)
+      }
+    }
   },
   actions: {
     addToCart : ({commit},product) => commit('ADD_TO_CART',product),
+    deleteToCart : ({commit},product) => commit('DELETE_TO_CART',product)
   },
   modules: {
   }

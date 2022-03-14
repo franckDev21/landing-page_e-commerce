@@ -1,5 +1,5 @@
 <template>
-  <div class="menu hide-for-desktop">
+  <div @click="$emit('open-menu')" class="menu hide-for-desktop">
     <span></span>
     <span></span>
     <span></span>
